@@ -1,0 +1,24 @@
+<svg id="map"></svg>
+
+<script src="https://unpkg.com/eurostat-map@3.3.0"></script>
+
+<script>
+eurostatmap.map("scomp")
+	.title("Tillage practices (2016)")
+	.titleFontSize(20)
+	.scale("60M")
+	.zoomExtent([1,5])
+	.nutsLvl(0)
+	.nutsYear(2013)
+	.stripeWidth(10)
+	.stripeOrientation(45)
+	.statComp( { eurostatDatasetCode: "ef_mp_prac", filters: { farmtype: "TOTAL", agrarea: "TOTAL", unit: "HA", crop_rot: "TOTAL", time: "2016" }, unitText: "ha" },
+                "tillage",
+                ["ARAXTIL", "TIL_ZERO", "TIL_CSERV", "TILL_CV"],
+                ["Tillage excluded", "No-till", "Conservation tillage", "Conventional"],
+                ["#EFEBE9", "#D7CCC8", "#795548", "#3E2723"]
+            )
+	.legend({x:10, y:65, title: "Tillage practices", boxOpacity: 0.8, boxFill: "white" })
+
+    .build();
+</script>
