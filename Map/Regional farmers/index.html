@@ -9,16 +9,14 @@
 
 <script>
     eurostatmap.map("ch")
-	.title("People active in agriculture, foresty and fisheries (2019)")
+	.title("People active in agriculture (2016)")
 	.titleFontSize(20)
 	.scale("60M")
 	.zoomExtent([1,5])
 	.nutsLvl(2)
-	.nutsYear(2021)
-	.stat({ eurostatDatasetCode:"lfst_r_lfe2en2", filters:{unit:"THS", time: 2019, age: "Y15-74", nace_r2: "A"} })
+	.nutsYear(2016)
+	.stat({ eurostatDatasetCode:"ef_lf_main", filters:{sex: "T", unit:"PERS", time: 2016, wstatus: "TOTAL"} })
 	.colorFun(d3.interpolateGreys)
-	.legend({ x:10, y:65, title: "Thousand", boxOpacity: 0.8, boxFill: "white", labelDecNb: 0 })
+	.legend({ x:10, y:65, title: "Amount of people", boxOpacity: 0.8, boxFill: "white", labelDecNb: 0 })
     .build();
 </script>
-
-
