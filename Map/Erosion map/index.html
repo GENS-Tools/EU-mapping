@@ -10,9 +10,11 @@
 <script>
     eurostatmap.map("ch")
 	.title("Erosion by water (2016)")
-	.zoomExtent([1,3])
+	.titleFontSize(40)
+	.scale("60M")
+	.zoomExtent([1,5])
 	.nutsLvl(3)
 	.stat({ eurostatDatasetCode:"aei_pr_soiler", filters:{unit:"T_HA", time:2016} })
-	.legend({ x:10, y:180, title: "T/HA", labelDecNb: 0 })
+	.legend({ x:10, y:65, title: "T/HA", boxOpacity: 0.8, boxFill: "white" })
     .build();
 </script>

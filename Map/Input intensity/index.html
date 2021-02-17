@@ -5,6 +5,8 @@
 <script>
 eurostatmap.map("scomp")
 	.title("Input intensity farms (2017)")
+	.titleFontSize(40)
+	.scale("60M")
 	.zoomExtent([1,5])
 	.nutsLvl(2)
 	.nutsYear(2016)
@@ -16,7 +18,7 @@ eurostatmap.map("scomp")
 		["High", "Low", "Medium"],
 		["#FF5733", "#58D68D", "#FFC300"]
 	)
-	.legend({x:550, y:10})
+	.legend({x:10, y:65, title: "Intensity", boxOpacity: 0.8, boxFill: "white"})
 
     .build();
 </script>

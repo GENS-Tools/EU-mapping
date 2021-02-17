@@ -10,12 +10,14 @@
 <script>
     eurostatmap.map("ch")
 	.title("Fully converted and under conversion to organic")
+	.titleFontSize(40)
+	.scale("60M")
 	.zoomExtent([1,5])
 	.nutsLvl(0)
 	.nutsYear(2021)
 	.stat({ eurostatDatasetCode:"org_cropar", filters:{agprdmet:"TOTAL", crops:"UAAXK0000", unit:"PC_UAA", time:2019} })
 	.colorFun(d3.interpolateYlGn)
-	.legend({ x:10, y:180, title: "% of UAA", labelDecNb: 0 })
+	.legend({ x:10, y:65, title: "% of UAA", boxOpacity: 0.8, boxFill: "white", labelDecNb: 0 })
     .build();
 </script>
 
