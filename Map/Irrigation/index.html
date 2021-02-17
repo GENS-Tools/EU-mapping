@@ -1,0 +1,23 @@
+<svg id="map"></svg>
+
+<script src="https://unpkg.com/eurostat-map@3.3.0"></script>
+
+<!-- for eurostatmap.colorFun() -->
+<script src="https://d3js.org/d3-color.v2.min.js"></script>
+<script src="https://d3js.org/d3-interpolate.v2.min.js"></script>
+<script src="https://d3js.org/d3-scale-chromatic.v2.min.js"></script>
+
+<script>
+    eurostatmap.map("chbi")
+	.title("Irrigable vs irrigated area (2016)")
+	.titleFontSize(20)
+	.scale("60M")
+	.zoomExtent([1,5])
+	.nutsLvl(2)
+	.nutsYear(2013)
+	.stat("v1", { eurostatDatasetCode:"tai03", filters:{ crops: "UAAIB", unit: "PC_UAA", time: 2016 }, unitText: "%" } )
+	.stat("v2", { eurostatDatasetCode:"tai03", filters:{ crops: "UAAIT", unit: "PC_UAA", time: 2016 }, unitText: "%" } )
+	.clnb(4)
+	.legend({ boxFill: "none", squareSize: 80, label1: "Irrigable", label2: "Irrigated", x:10, y:140, })
+	.build();
+</script>
