@@ -1,0 +1,21 @@
+<svg id="map"></svg>
+
+<script src="https://unpkg.com/eurostat-map@3.3.0"></script>
+
+<!-- for eurostatmap.colorFun() -->
+<script src="https://d3js.org/d3-color.v2.min.js"></script>
+<script src="https://d3js.org/d3-interpolate.v2.min.js"></script>
+<script src="https://d3js.org/d3-scale-chromatic.v2.min.js"></script>
+
+<script>
+    eurostatmap.map("ch")
+	.title("Area affected by severe erosion (2016)")
+	.titleFontSize(20)
+	.scale("60M")
+	.zoomExtent([1,5])
+	.nutsLvl(0)
+	.stat({ eurostatDatasetCode:"tai11", filters:{clc18: "CLC2_321", unit:"PC", levels: "SEV", time:2016} })
+	.legend({ x:10, y:65, title: "% of area", boxOpacity: 0.8, boxFill: "white" })
+    .build();
+</script>
+
