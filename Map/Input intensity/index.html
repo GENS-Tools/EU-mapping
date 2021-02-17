@@ -1,0 +1,23 @@
+<svg id="map"></svg>
+
+<script src="https://unpkg.com/eurostat-map@3.3.0"></script>
+
+<script>
+eurostatmap.map("scomp")
+	.title("Input intensity farms (2017)")
+	.zoomExtent([1,5])
+	.nutsLvl(2)
+	.nutsYear(2016)
+	.stripeWidth(10)
+	.stripeOrientation(45)
+	.statComp( { eurostatDatasetCode: "aei_ps_inp", filters: { unit: "HA", time: "2017" }, unitText: "Hectares" },
+		"indic_ag",
+		["HIGH_INP", "LOW_INP", "MED_INP"],
+		["High", "Low", "Medium"],
+		["#FF5733", "#58D68D", "#FFC300"]
+	)
+	.legend({x:550, y:10})
+
+    .build();
+</script>
+
