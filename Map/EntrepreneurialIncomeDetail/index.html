@@ -1,0 +1,20 @@
+<svg id="map"></svg>
+
+<script src="https://unpkg.com/eurostat-map@3.3.0"></script>
+
+<!-- for eurostatmap.colorFun() -->
+<script src="https://d3js.org/d3-color.v2.min.js"></script>
+<script src="https://d3js.org/d3-interpolate.v2.min.js"></script>
+<script src="https://d3js.org/d3-scale-chromatic.v2.min.js"></script>
+
+<script>
+    eurostatmap.map("ch")
+	.title("Entrepreneurial income detail (incl. subsidy)(2018)")
+	.zoomExtent([1,5])
+	.nutsLvl(2)
+	.nutsYear(2016)
+	.stat({ eurostatDatasetCode:"agr_r_accts", filters:{itm_newa: "31000", indic_ag: "PROD_BP", unit: "MIO_EUR", time:2018} })
+	.colorFun(d3.interpolateYlGn)
+	.legend({ x:10, y:65, title: "Million euro", boxOpacity: 0.8, boxFill: "white", labelDecNb: 0 })
+    .build();
+</script>
