@@ -1,0 +1,24 @@
+<svg id="map"></svg>
+
+<script src="https://unpkg.com/eurostat-map@3.3.0"></script>
+
+<script>
+eurostatmap.map("scomp")
+	.title("Farms size in Europe (2013)")
+	.titleFontSize(20)
+	.scale("60M")
+	.zoomExtent([1,5])
+	.nutsLvl(2)
+	.nutsYear(2013)
+	.stripeWidth(10)
+	.stripeOrientation(45)
+	.statComp( { eurostatDatasetCode: "ef_kvaareg", filters: { indic_ef: "TOTAREA_HA", legtype: "TOTAL", time: "2013" }, unitText: "" },
+                "agrarea",
+                ["HA_LT2", "HA2-4", "HA5-9", "HA10-19", "HA20-29", "HA30-49", "HA50-99", "HA_GE100"],
+                ["< 2 ha", "2 to 4.9 ha", "5 to 9.9 ha", "10 to 19.9 ha", "20 to 29.9 ha", "30 to 49.9 ha", "50 to 99.9 ha", "> 100 ha"],
+                ["#d53e4f", "#f46d43", "#fdae61", "#fee08b", "#ffffbf", "#e6f598", "#abdda4", "#66c2a5", "#3288bd"]
+            )
+	.legend({x:10, y:65, title: "Farm areas", boxOpacity: 0.8, boxFill: "white" })
+
+    .build();
+</script>
