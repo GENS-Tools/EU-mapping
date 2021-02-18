@@ -9,14 +9,14 @@
 
 <script>
     eurostatmap.map("ch")
-	.title("Price of arable land (2019)")
+	.title("Eco-innovation index (2019)")
 	.titleFontSize(20)
 	.scale("60M")
 	.zoomExtent([1,5])
 	.nutsLvl(0)
 	.nutsYear(2016)
 	.stat({ eurostatDatasetCode:"t2020_rt200", filters:{ unit: "I_EU", time:2019},  unitText: "Index EU=100" })
-	.colorFun(d3.interpolateReds)
+	.colorFun(d3.interpolateGreens)
 	.legend({ x:10, y:65, title: "Index EU=100", boxOpacity: 0.8, boxFill: "white", labelDecNb: 0 })
     .build();
 </script>
