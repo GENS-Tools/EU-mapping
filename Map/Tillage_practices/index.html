@@ -3,21 +3,21 @@
 <script src="https://unpkg.com/eurostat-map@3.3.0"></script>
 
 <script>
-map = eurostatmap.map("scomp");
-	map.title("Tillage practices (2016)");
-	map.titleFontSize(20);
-	map.scale("60M");
-	map.zoomExtent([1,5]);
-	map.nutsLvl(2);
-	map.nutsYear(2016);
-	map.stripeWidth(10);
-	map.stripeOrientation(45);
-	map.stat( { csvURL: "https://github.com/GENS-Tools/EU-mapping/blob/main/Map/Tillage_practices/EF_MP_PRAC__Tillage.csv", geoCol: "GEO (Labels)", valueCol: "Arable land excluding tillage" }, unitText: "ha" );
-	map.stat( { csvURL: "https://github.com/GENS-Tools/EU-mapping/blob/main/Map/Tillage_practices/EF_MP_PRAC__Tillage.csv", geoCol: "GEO (Labels)", valueCol: "Conventional tillage" }, unitText: "ha" );
-	map.stat( { csvURL: "https://github.com/GENS-Tools/EU-mapping/blob/main/Map/Tillage_practices/EF_MP_PRAC__Tillage.csv", geoCol: "GEO (Labels)", valueCol: "Conservational tillage" }, unitText: "ha" );
-	map.stat( { csvURL: "https://github.com/GENS-Tools/EU-mapping/blob/main/Map/Tillage_practices/EF_MP_PRAC__Tillage.csv", geoCol: "GEO (Labels)", valueCol: "Zero tillage" }, unitText: "ha" );
-	map.catLabels({"Arable land excluding tillage":"Arable land excluding tillage", "Conventional tillage":"Conventional tillage", "Conservational tillage":"Conservational tillage", "Zero tillage":"Zero tillage"});
-	map.catColors({"Arable land excluding tillage":"#EFEBE9", "Conventional tillage":"#D7CCC8", "Conservational tillage":"#795548", "Zero tillage":"#3E2723"});
-	map.legend({x:10, y:65, title: "Tillage practices", boxOpacity: 0.8, boxFill: "white" });
-    map.build();
+eurostatmap.map("scomp");
+	.title("Tillage practices (2016)");
+	.titleFontSize(20);
+	.scale("60M");
+	.zoomExtent([1,5]);
+	.nutsLvl(2);
+	.nutsYear(2016);
+	.stripeWidth(10);
+	.stripeOrientation(45);
+	.stat( { csvURL: "https://github.com/GENS-Tools/EU-mapping/blob/main/Map/Tillage_practices/EF_MP_PRAC__Tillage.csv", geoCol: "GEO (Labels)", valueCol: "Arable land excluding tillage" }, unitText: "ha" );
+	.stat( { csvURL: "https://github.com/GENS-Tools/EU-mapping/blob/main/Map/Tillage_practices/EF_MP_PRAC__Tillage.csv", geoCol: "GEO (Labels)", valueCol: "Conventional tillage" }, unitText: "ha" );
+	.stat( { csvURL: "https://github.com/GENS-Tools/EU-mapping/blob/main/Map/Tillage_practices/EF_MP_PRAC__Tillage.csv", geoCol: "GEO (Labels)", valueCol: "Conservational tillage" }, unitText: "ha" );
+	.stat( { csvURL: "https://github.com/GENS-Tools/EU-mapping/blob/main/Map/Tillage_practices/EF_MP_PRAC__Tillage.csv", geoCol: "GEO (Labels)", valueCol: "Zero tillage" }, unitText: "ha" );
+	.catLabels({"Arable land excluding tillage":"Arable land excluding tillage", "Conventional tillage":"Conventional tillage", "Conservational tillage":"Conservational tillage", "Zero tillage":"Zero tillage"});
+	.catColors({"Arable land excluding tillage":"#EFEBE9", "Conventional tillage":"#D7CCC8", "Conservational tillage":"#795548", "Zero tillage":"#3E2723"});
+	.legend({x:10, y:65, title: "Tillage practices", boxOpacity: 0.8, boxFill: "white" });
+    .build();
 </script>
