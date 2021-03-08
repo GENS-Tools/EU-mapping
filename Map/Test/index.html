@@ -1,0 +1,15 @@
+<svg id="map"></svg>
+
+<script src="https://unpkg.com/eurostat-map@3.3.0"></script>
+
+<script>
+map = eurostatmap.map("ch");
+map.stat( {
+	csvURL: "https://raw.githubusercontent.com/eurostat/eurostat-map.js/master/examples/urb_rur_typo.csv",
+	geoCol: "NUTS_ID_2013",
+	valueCol: "urban_rural"
+});
+      .build();
+</script>
+  
+  
