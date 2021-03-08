@@ -4,21 +4,23 @@
 
 <script>
 eurostatmap.map("scomp")
-	.title("Tillage practices (2016)")
-	.titleFontSize(20)
-	.scale("60M")
-	.zoomExtent([1,5])
-	.nutsLvl(0)
-	.nutsYear(2013)
-	.stripeWidth(10)
-	.stripeOrientation(45)
-	.statComp( { eurostatDatasetCode: "ef_mp_soil", filters: { farmtype: "TOTAL", agrarea: "TOTAL", unit: "HA", crop_rot: "TOTAL", time: "2016" }, unitText: "ha" },
-                "soil_cov",
-                ["ARAXSC", "SC_BARE, "SC_COV_INTCR", "SC_MAPL", "SC_PLRES", "SC_WNTCR"],
-                ["Excluding soil cover", "Bare soil", "Cover crop or intermediate crop", "Multi-annual plants", "Plant residue", "Winter crop"],
-                ["#FDFEFE", "#D35400", "#1E8449", "#186A3B", "#ABEBC6", "#2ECC71"]
-            )
-	.legend({x:10, y:65, title: "Tillage practices", boxOpacity: 0.8, boxFill: "white" })
+	map.title("Tillage practices (2016)")
+	map.titleFontSize(20)
+	map.scale("60M")
+	map.zoomExtent([1,5])
+	map.nutsLvl(0)
+	map.nutsYear(2013)
+	map.stripeWidth(10)
+	map.stripeOrientation(45)
+	map.statComp( { eurostatDatasetCode: "ef_mp_soil", filters: { farmtype: "TOTAL", soil_cov: "ARAXSC", agrarea: "TOTAL", unit: "HA", crop_rot: "TOTAL", time: "2016" }, unitText: "ha" }),
+	map.statComp( { eurostatDatasetCode: "ef_mp_soil", filters: { farmtype: "TOTAL", soil_cov: "SC_BARE", agrarea: "TOTAL", unit: "HA", crop_rot: "TOTAL", time: "2016" }, unitText: "ha" }),
+	map.statComp( { eurostatDatasetCode: "ef_mp_soil", filters: { farmtype: "TOTAL", soil_cov: "SC_COV_INTCR", agrarea: "TOTAL", unit: "HA", crop_rot: "TOTAL", time: "2016" }, unitText: "ha" }),
+	map.statComp( { eurostatDatasetCode: "ef_mp_soil", filters: { farmtype: "TOTAL", soil_cov: "SC_MAPL", agrarea: "TOTAL", unit: "HA", crop_rot: "TOTAL", time: "2016" }, unitText: "ha" }),
+	map.statComp( { eurostatDatasetCode: "ef_mp_soil", filters: { farmtype: "TOTAL", soil_cov: "SC_PLRES", agrarea: "TOTAL", unit: "HA", crop_rot: "TOTAL", time: "2016" }, unitText: "ha" }),
+	map.statComp( { eurostatDatasetCode: "ef_mp_soil", filters: { farmtype: "TOTAL", soil_cov: "SC_WNTCR", agrarea: "TOTAL", unit: "HA", crop_rot: "TOTAL", time: "2016" }, unitText: "ha" }),
+	map.catLabels({"ARAXSC":"Excluding soil cover", "SC_BARE":"Bare soil", "SC_COV_INTCR":"Cover crop or intermediate crop", "SC_MAPL":"Multi-annual plants", "SC_PLRES":"Plant residue", "SC_WNTCR":"Winter crop"})
+	map.catColors({"ARAXSC":"#FDFEFE", "SC_BARE":"#D35400", "SC_COV_INTCR":"#1E8449", "SC_MAPL":"#186A3B", "SC_PLRES":"#ABEBC6", "SC_WNTCR":"#2ECC71"})
+	map.legend({x:10, y:65, title: "Soil cover type", boxOpacity: 0.8, boxFill: "white" })
 
     .build();
 </script>
